@@ -6,5 +6,14 @@ export default defineNuxtConfig({
      baseURL: "/dream-project/"
   },
   modules: ['@hypernym/nuxt-gsap'],
+  generate:{
+    nojekyll: true, //not working on this version
+    fallback: '404.html',
+  },
+  generator:{
+    nojekyll:true
+  },
+  ssr: false, //When false
+  target: "static", // 
 
 })

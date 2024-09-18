@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxi build --prerender & node -e \"require('fs').rename('dist', 'docs', function() {})\"",
+    "build": "nuxi build --prerender & node -e \"require('fs').rename('dist', 'docs', function() {})\" & cd docs & echo - > .nojekyll",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
