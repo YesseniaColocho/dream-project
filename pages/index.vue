@@ -294,28 +294,6 @@ function checkForRouteChange(value) {
 </script>
 
 <style scoped lang="scss">
-.background-one-section {
-  background: url("/dream-project/meteoro1.gif");
-  background-position: left 50% top 100vh;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  box-shadow: inset 0 0 3em 2em #000;
-  width: 100vw;
-  height: 100vh;
-}
-
-.neutral-background {
-  background: url("/dream-project/moon.jpg");
-}
-.good-background {
-  background: url("/dream-project/universo.jpg");
-}
-.bad-background {
-  background: url("/dream-project/bosque.jpg");
-}
 .route-background {
   background-position: left 50% top 60vh;
   background-size: cover;
