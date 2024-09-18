@@ -28,7 +28,7 @@
           v-for="answer in questionOne.answers"
           @click="answerFirstQuestion(answer.points)"
         >
-          {{ answer.text }} {{ answer.points }}
+          {{ answer.text }} ({{ answer.points }})
         </button>
       </div>
     </section>
@@ -78,23 +78,6 @@ const answers = [[]];
 
 //Ruta actual
 const actualRoute = ref("neutral");
-
-watch(actualRoute, (newVal, oldVal) => {
-  tl.to(
-    `.${oldVal}-background`,
-    {
-      opacity: 0,
-    },
-    "<"
-  );
-  tl.to(
-    `.${newVal}-background`,
-    {
-      opacity: 1,
-    },
-    "<"
-  );
-});
 
 //Textos
 const textNumber = ref(1);
@@ -259,10 +242,12 @@ function saveAnswer(answerIndex, points) {
 }
 
 function finishQuestionary() {
-  calculateRoute(questionaryNumber.value);
   tl.to(".all-questions", {
     opacity: 0,
     display: "none",
+    onComplete: () => {
+      calculateRoute(questionaryNumber.value);
+    },
   });
   tl.to(".black-element", {
     opacity: 1,
@@ -283,12 +268,31 @@ function calculateRoute() {
 }
 
 function checkForRouteChange(value) {
+  const prevRoute = actualRoute.value;
   if (value <= -1) {
     actualRoute.value = "bad";
   } else if (value > -1 && value < 1) {
     actualRoute.value = "neutral";
   } else {
     actualRoute.value = "good";
+  }
+
+  //Change background animation
+  if (prevRoute !== actualRoute.value) {
+    tl.to(
+      `.${prevRoute}-background`,
+      {
+        opacity: 0,
+      },
+      "<"
+    );
+    tl.to(
+      `.${actualRoute.value}-background`,
+      {
+        opacity: 1,
+      },
+      "<"
+    );
   }
 }
 </script>
@@ -344,6 +348,9 @@ function checkForRouteChange(value) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+}
+.all-questions {
+  background: rgba(0, 0, 0, 0.4);
 }
 .title-game {
   position: absolute;
