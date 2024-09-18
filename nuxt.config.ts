@@ -6,7 +6,5 @@ export default defineNuxtConfig({
      baseURL: "/dream-project/"
   },
   modules: ['@hypernym/nuxt-gsap'],
-  ssr: false, //When false
-  target: "static" // and static, nuxt generates a SPA
 
 })

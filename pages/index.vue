@@ -5,8 +5,8 @@
     <div class="route-background good-background" style="opacity: 0"></div>
     <div class="route-background bad-background" style="opacity: 0"></div>
 
-    <audio ref="ping" src="/sound/215415__unfa__ping.flac"></audio>
-    <audio ref="sadMusic" src="/sound/sadMusic.wav" loop></audio>
+    <audio ref="ping" src="/dream-project/sound/215415__unfa__ping.flac"></audio>
+    <audio ref="sadMusic" src="/dream-project/sound/sadMusic.wav" loop></audio>
 
     <div class="display">
       <p>{{ displayText }}</p>
