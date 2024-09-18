@@ -5,7 +5,10 @@
     <div class="route-background good-background" style="opacity: 0"></div>
     <div class="route-background bad-background" style="opacity: 0"></div>
 
-    <audio ref="ping" src="/dream-project/sound/215415__unfa__ping.flac"></audio>
+    <audio
+      ref="ping"
+      src="/dream-project/sound/215415__unfa__ping.flac"
+    ></audio>
     <audio ref="sadMusic" src="/dream-project/sound/sadMusic.wav" loop></audio>
 
     <div class="display">
@@ -292,7 +295,7 @@ function checkForRouteChange(value) {
 
 <style scoped lang="scss">
 .background-one-section {
-  background: url("meteoro1.gif");
+  background: url("/dream-project/meteoro1.gif");
   background-position: left 50% top 100vh;
   background-size: cover;
   position: absolute;
@@ -305,13 +308,13 @@ function checkForRouteChange(value) {
 }
 
 .neutral-background {
-  background: url("moon.jpg");
+  background: url("/dream-project/moon.jpg");
 }
 .good-background {
-  background: url("universo.jpg");
+  background: url("/dream-project/universo.jpg");
 }
 .bad-background {
-  background: url("bosque.jpg");
+  background: url("/dream-project/bosque.jpg");
 }
 .route-background {
   background-position: left 50% top 60vh;
