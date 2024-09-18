@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@hypernym/nuxt-gsap'],
-  buildDir: 'docs'
+  ssr: false
 
 })
